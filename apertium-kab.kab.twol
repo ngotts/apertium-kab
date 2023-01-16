@@ -5,8 +5,8 @@ Alphabet
 
 Sets
 
-Vowel = A E Ä I O Ö U Ü Y Ý
-        a e ä i o ö u ü y ý ;
+Vowel = A E Ɛ I O U Y 
+        a e ɛ i o u y ;
 
 Rules
 

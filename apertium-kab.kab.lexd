@@ -27,23 +27,114 @@
 ###############################################################################
 
 PATTERNS
-NounRoot RegNounInfl
+#Feminine Singulars
+:FemCircum(1) Stem FemCircum(2) [:<n><fem><sg>]
+(:FemCircum(1) :Vsing-2(1) C-3(1) C-3(2) :Vsing-2(2) C-3(3) :FemCircum(2) [:<n><fem><sg>])[^[a-a,a-e,i-i,a-u,a-i],F]
+
+#Feminine Plurals
+(:FemCircum(1) PluPref C-3(1) C-3(2) :Vplu(1) C-3(3) PluSufIn [:<n><fem<pl>])[^[PlurA,PlurE,PlurU],F]
+(:FemCircum(1) PluPref C-3(1) C-3(2) :Vplu(1) C-3(3) [:<n><fem><pl>])[^[PlurA,PlurE,PlurU],F]
+
+#Masculine Singulars
+Stem [:<n><masc><sg>]
+(:Vsing-2(1) C-2(1) :Vsing-2(2) C-2(2) [:<n><masc><sg>])[^[a-a,a-e,i-i,a-u,a-i]]
+(:Vsing-2(1) C-3(1) C-3(2) :Vsing-2(2) C-3(3) [:<n><masc><sg>])[^[a-a,a-i,a-u,a-e,i-i]]
+(:Vsing-3(1) C-3.2(1) :Vsing-3(2) C-3.2(2) :Vsing-3(3) C-3.2(3) [:<n><masc><sg>])[^[a-a-i,a-a-u,a-u-i,a-a-e]]
+(:Vsing-3.2(1) C-3.3(1) :Vsing-3.2(2) C-3.3(2) C-3.3(3) :Vsing-3.2(3) [:<n><masc><sg>])
+
+#Masculine Plurals
+(PluPref C-2(1) :Vplu(1) C-2(2) C-2(2) PluSufEn [:<n><masc><pl>])[^[PlurA,PlurE,PlurU]]
+(PluPref C-3(1) C-3(2) :Vplu(1) C-3(3) PluSufEn [:<n><masc><pl>])[^[PlurA,PlurE,PlurU],SufEn]
+(PluPref C-3(1) :Vplu(1) C-3(2) C-3(3) PluSufAn [:<n><masc><pl>])[^[PlurA,PlurE,PlurU],SufAn]
+(PluPref C-3(1) C-3(2) :Vplu(1) C-3(3) [:<n><masc><pl>])[^[PlurA,PlurE,PlurU],reg]
+(PluPref C-3(1) Vplu-2(1) C-3(2) Vplu-2(2) C-3(3) [:<n><masc><pl>])[int]
+(PluPref C-3.2(1) Vplu-2(1) C-3.2(2) Vplu-2(2) C-3.2(3) [:<n><masc><pl>])[interne]
+(PluPref C-3.3(1) Vplu-2(1) C-3.3(2) C-3.3(3) Vplu-2(2) [:<n><masc><pl>])
+
 Punctuation
-
-
-LEXICON RegNounInfl
-
-<n><sg>:
-<n><pl>:>s
 
 
 ###############################################################################
 ###                          L E X I C O N                                  ###
 ###############################################################################
 
-LEXICON NounRoot
 
-house:house   # A noun
+LEXICON Stem
+azrem #
+ajenwi #poignard
+
+LEXICON C-2(2)
+f s[a-u,PlurA]
+s f[a-i,PlurA]
+ḍ r[a-a,PlurA] #pied
+b x[a-u,PlurU] #suie
+
+
+LEXICON C-3(3)
+r g z[a-a,PlurA,SufEn] #man argaz-> irgazen
+m ɣ r[a-a,PlurA,SufEn,F] #old man  -> amgar -> imgaren
+d r r[a-a,int] #mountain adrar -> idurar
+m r r[a-a,int] #rope amrar -> imurar
+m c c[a-i,PlurA,reg,F] #cat amcic -> imcac
+w t l[a-u,PlurA,reg] #rabbit awtul->iwtal
+z g r[a-e,PlurA,SufEn] #beef
+c k r[i-i,PlurE,SufAn]
+y z ḍ[a-i,interne] #coq
+
+LEXICON C-3.2(3)
+y z ḍ[a-a-i,interne] #ayaziḍ-> iyuzaḍ
+b g s[a-a-u,interne] #ceinture
+m ḍ n[a-u-i,interne] #malade
+m y g[a-a-e,interne] #côté du visage
+
+LEXICON C-3.3(3)
+b l m #marais malsain
+
+LEXICON PluPref
+:i
+
+LEXICON FemCircum(2)
+:t :t
+
+#LEXICON Vsing-1(1)
+
+
+LEXICON Vsing-2(2)
+:a :a[a-a]
+:a :i[a-i]
+:a :u[a-u]
+:a :e[a-e]
+:i :i[i-i]
+
+LEXICON Vsing-3(3)
+:a :a :i[a-a-i]
+:a :a :u[a-a-u]
+:a :a :e[a-a-e]
+:a :u :i[a-u-i]
+
+LEXICON Vsing-3.2(3)
+:a :a :a[a-a-a]
+
+LEXICON Vplu(1)
+:a[PlurA]
+:e[PlurE]
+:u[PlurU]
+
+LEXICON Vplu-2(2)
+:u :a
+
+LEXICON FemSuf
+:t
+
+LEXICON PluSufEn
+:>en
+
+LEXICON PluSufAn
+>:>an
+
+
+LEXICON PluSufIn
+>:>in
 
 
 LEXICON Punctuation
